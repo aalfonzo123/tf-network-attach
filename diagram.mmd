@@ -35,16 +35,16 @@ flowchart TB
     end
 
     %% Component Relationships
-    PRODUCER_UMIG -->|contains| PRODUCER_VM
-    PRODUCER_ILB -->|backend service| PRODUCER_UMIG
-    PRODUCER_HC -->|monitors| PRODUCER_ILB
-    SERVICE_ATTACH -->|target service| PRODUCER_ILB
+    PRODUCER_UMIG -->|"contains"| PRODUCER_VM
+    PRODUCER_ILB -->|"backend service"| PRODUCER_UMIG
+    PRODUCER_HC -->|"monitors"| PRODUCER_ILB
+    SERVICE_ATTACH -->|"target service"| PRODUCER_ILB
 
-    NET_ATTACH_B -.->|subnetwork binding| SUBNET_B
+    NET_ATTACH_B -.->|"subnetwork binding"| SUBNET_B
 
     %% PSC Links
-    PSC_ENDPOINT ==>|1. PSC Ingress Tunnel| SERVICE_ATTACH
-    PRODUCER_VM -.->|2. PSC Egress (nic1 interface)| NET_ATTACH_B
+    PSC_ENDPOINT ==>|"1. PSC Ingress Tunnel"| SERVICE_ATTACH
+    PRODUCER_VM -.->|"2. PSC Egress (nic1 interface)"| NET_ATTACH_B
 
     %% Call Flow
     CONSUMER_VM_A -->|"Step 1: GET http://10.1.0.2:8080"| PSC_ENDPOINT
