@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+.adk
+.terraform
+
+# Generated HTML event logs
+session_events_*.html
+llm_request_contents_*.html
+
+
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
